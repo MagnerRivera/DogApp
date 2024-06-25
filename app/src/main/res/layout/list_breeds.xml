@@ -13,19 +13,33 @@
         app:cardBackgroundColor="@color/light_grey">
 
         <ImageView
-            android:id="@+id/ivCountry"
+            android:id="@+id/ivBreed"
             android:layout_width="@dimen/layout_width"
             android:layout_height="@dimen/layout_height"
             android:layout_gravity="center"
+            android:layout_marginTop="@dimen/space_medium"
             android:contentDescription="@string/back_image"
             android:scaleType="fitCenter"
-            app:layout_constraintBottom_toTopOf="@id/tvCountry"
+            app:layout_constraintBottom_toTopOf="@id/tvBreed"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/ivShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="100dp"
+            android:contentDescription="@string/back_image"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_share"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivBreed"
+            app:layout_constraintStart_toStartOf="parent" />
+
         <TextView
-            android:id="@+id/tvCountry"
+            android:id="@+id/tvBreed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -33,9 +47,9 @@
             android:text="@string/breed"
             android:textColor="@color/text_normal"
             android:textSize="@dimen/text_medium_large"
-            app:layout_constraintEnd_toEndOf="@id/ivCountry"
-            app:layout_constraintStart_toStartOf="@id/ivCountry"
-            app:layout_constraintTop_toBottomOf="@id/ivCountry" />
+            app:layout_constraintEnd_toEndOf="@id/ivBreed"
+            app:layout_constraintStart_toStartOf="@id/ivBreed"
+            app:layout_constraintTop_toBottomOf="@id/ivBreed" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
