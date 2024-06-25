@@ -80,6 +80,31 @@
             app:layout_constraintTop_toBottomOf="@+id/searchLayout"
             tools:listitem="@layout/list_breeds" />
 
+        <ImageView
+            android:id="@+id/imageEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_empty"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/rvBreeds"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchLayout"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <TextView
+            android:id="@+id/emptyPhotos"
+            style="@style/TextColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/no_connection"
+            android:textSize="20sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
+            app:layout_constraintStart_toStartOf="@+id/leftGuideLine"
+            app:layout_constraintTop_toBottomOf="@+id/imageEmpty" />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/rightGuideLine"
             android:layout_width="match_parent"
