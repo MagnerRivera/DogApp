@@ -21,6 +21,7 @@ import com.example.dogapp.retrofit.DogResponse
 import dagger.hilt.android.AndroidEntryPoint
 import retrofit2.Call
 import retrofit2.Callback
+import androidx.navigation.fragment.findNavController
 import retrofit2.Response
 
 private const val TAG = "HomeFragment"
@@ -57,9 +58,14 @@ class HomeFragment : Fragment() {
             }
         }
 
-        breedAdapter = BreedAdapter(breeds) { breedName, imageUrl ->
-            shareImage(breedName, imageUrl)
-        }
+        breedAdapter = BreedAdapter(breeds,
+            onShareClick = { breedName, imageUrl ->
+                shareImage(breedName, imageUrl)
+            },
+            onItemClick = { breedName, imageUrl ->
+                navigateToDetailBreed(breedName, imageUrl)
+            }
+        )
         binding.rvBreeds.apply {
             layoutManager = GridLayoutManager(context, 2)
             adapter = breedAdapter
@@ -138,5 +144,10 @@ class HomeFragment : Fragment() {
     private fun filterBreeds(query: String) {
         val filteredBreeds = breeds.filter { it.name.contains(query, ignoreCase = true) }
         breedAdapter.updateBreeds(filteredBreeds)
+    }
+
+    private fun navigateToDetailBreed(breedName: String, imageUrl: String) {
+        val action = HomeFragmentDirections.actionHomeFragmentToFragmentDetailBreed(breedName, imageUrl)
+        findNavController().navigate(action)
     }
 }

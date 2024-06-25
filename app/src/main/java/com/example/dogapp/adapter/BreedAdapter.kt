@@ -10,7 +10,8 @@ import com.squareup.picasso.Picasso
 
 class BreedAdapter(
     private var breeds: List<Breed>,
-    private val shareImage: (String, String) -> Unit
+    private val onShareClick: (String, String) -> Unit,
+    private val onItemClick: (String, String) -> Unit
 ) : RecyclerView.Adapter<BreedAdapter.BreedViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BreedViewHolder {
@@ -34,7 +35,11 @@ class BreedAdapter(
                 .into(binding.ivBreed)
 
             binding.ivShare.setOnClickListener {
-                shareImage(breed.name, breed.imageUrl)
+                onShareClick(breed.name, breed.imageUrl)
+            }
+
+            binding.root.setOnClickListener {
+                onItemClick(breed.name, breed.imageUrl)
             }
         }
     }

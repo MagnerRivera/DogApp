@@ -9,11 +9,35 @@
         android:id="@+id/homeFragment"
         android:name="com.example.dogapp.fragments.options.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_fragmentDetailBreed"
+            app:destination="@id/fragmentDetailBreed">
+            <argument
+                android:name="breedName"
+                app:argType="string" />
+            <argument
+                android:name="imageUrl"
+                app:argType="string" />
+        </action>
+    </fragment>
 
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.dogapp.fragments.options.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/fragmentDetailBreed"
+        android:name="com.example.dogapp.fragments.options.FragmentDetailBreed"
+        android:label="FragmentDetailBreed"
+        tools:layout="@layout/fragment_detail_breed">
+        <argument
+            android:name="breedName"
+            app:argType="string" />
+        <argument
+            android:name="imageUrl"
+            app:argType="string" />
+    </fragment>
 </navigation>

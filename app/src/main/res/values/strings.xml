@@ -29,4 +29,7 @@
     <string name="arrow_image">Imagen para el arrow</string>
     <string name="race_image">Imagen Raza</string>
     <string name="breed">Raza</string>
+    <string name="detail_breed">Detalle de la raza</string>
+    <string name="map_breed">Imagen del perro</string>
+    <string name="name_breed">Nombre de la raza</string>
 </resources>
